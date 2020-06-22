@@ -7,6 +7,8 @@ branches:
   only:
     - master # build master branch only
 script:
+  - git clone -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly
+
   - hexo generate # generate static files
 deploy:
   provider: pages
