@@ -9,6 +9,9 @@ branches:
 script:
   
   - hexo generate # generate static files
+  - ls 
+  - cd public 
+  - echo 'doc.genji.xyz' > CNAME
 deploy:
   provider: pages
   skip-cleanup: true
