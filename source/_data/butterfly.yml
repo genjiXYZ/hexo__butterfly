@@ -97,7 +97,7 @@ avatar:
 index_img:
 
 # if the banner of page not setting,it will show the top_img
-default_top_img: http://pic.genji.xyz/blog/bg/blog_bg.png
+default_top_img: https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/93ab2b66050921.5c8329da94399.png
 
 # the banner image of archive page
 archive_img:
