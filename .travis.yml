@@ -19,7 +19,7 @@ script:
   - hexo generate
   - ls
   - tar -zcvf hexo.tar.bz2 ./public
-  - scp -o stricthostkeychecking=no -r ./hexo.tar.bz2 root@$39.108.65.147:/www/wwwroot/hello
+  - scp -o stricthostkeychecking=no -r ./hexo.tar.bz2 root@39.108.65.147:/www/wwwroot/hello
   - ssh root@39.108.65.147 'cd /www/wwwroot/hello && tar -zxvf hexo.tar.bz2 && logout'
   - cd public
   - echo 'blog.genji.xyz' > CNAME
