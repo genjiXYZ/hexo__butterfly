@@ -17,7 +17,7 @@ before_install:
 script:
 - hexo generate
 - ls
-- scp -o stricthostkeychecking=no -r ./public/index.html root@$IP:/root/www/wwwroot/hello/
+- scp -o stricthostkeychecking=no -r ./public/index.html root@$IP:/root/www/wwwroot/hello
 - cd public
 - echo 'blog.genji.xyz' > CNAME
 
