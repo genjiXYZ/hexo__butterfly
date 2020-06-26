@@ -9,7 +9,7 @@ branches:
 
 
 addons:
-  ssh_known_hosts: 39.108.65.147
+  ssh_known_hosts: ${IP}
 before_install:
   - openssl aes-256-cbc -K $encrypted_024e66b057a6_key -iv $encrypted_024e66b057a6_iv
     -in id_rsa.enc -out ~/.ssh/id_rsa -d
@@ -19,10 +19,10 @@ script:
   - hexo generate
   - ls
   - tar -zcvf hexo.tar.bz2 ./public
-  - scp -o stricthostkeychecking=no -r ./hexo.tar.bz2 root@39.108.65.147:/www/wwwroot/hello
-  - ssh root@39.108.65.147 'cd /www/wwwroot/hello && tar -zxvf hexo.tar.bz2 '
-  - cd public
-  - echo 'blog.genji.xyz' > CNAME
+  - scp -o stricthostkeychecking=no -r ./hexo.tar.bz2 root@${IP}:/www/wwwroot/blog.genji.xyz
+  - ssh root@${IP} 'cd /www/wwwroot/blog.genji.xyz && tar -zxvf hexo.tar.bz2 '
+  # - cd public
+  # - echo 'blog.genji.xyz' > CNAME
 
 deploy:
   provider: pages
