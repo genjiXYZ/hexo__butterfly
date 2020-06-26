@@ -6,6 +6,7 @@ cache: npm
 branches:
   only:
   - master
+
 addons:
   ssh_known_hosts: $IP
 before_install:
