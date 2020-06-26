@@ -1,22 +1,37 @@
 sudo: false
 language: node_js
 node_js:
-  - 10 # use nodejs v10 LTS
+- 12
 cache: npm
 branches:
   only:
-    - master # build master branch only
+  - master
+before_install:
+  - openssl aes-256-cbc -K $encrypted_024e66b057a6_key -iv $encrypted_024e66b057a6_iv
+    -in id_rsa.enc -out ~/.ssh/id_rsa -d
+    
 script:
-  
-  - hexo generate # generate static files
-  - ls 
-  - cd public 
-  - echo 'blog.genji.xyz' > CNAME
+- hexo generate
+- ls
+- cd public
+- echo 'blog.genji.xyz' > CNAME
+
+
+
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $GH_TOKEN
+  github-token: "$GH_TOKEN"
   keep-history: true
   on:
     branch: master
   local-dir: public
+
+after_success:
+  -ls
+  - npm prune --production
+  -ls
+  - scp -o stricthostkeychecking=no -r ./* root@$IP:/root/www/wwwroot/hello/
+  
+  -ls 
+
