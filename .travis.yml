@@ -19,10 +19,8 @@ script:
   - ls
   - tar -zcvf hexo.tar.bz2 ./public
   - scp -o stricthostkeychecking=no -r ./hexo.tar.bz2 root@${IP}:/www/wwwroot/hello
-  - ssh root@${IP}  
-  - cd /www/wwwroot/hello
-  - tar -zxvf hexo.tar.bz2
-  - logout
+  - ssh root@${IP} 'cd /www/wwwroot/hello && tar -zxvf hexo.tar.bz2 && logout' 
+  
 
   - cd public
   - echo 'blog.genji.xyz' > CNAME
