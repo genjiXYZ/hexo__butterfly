@@ -1,28 +1,25 @@
 sudo: false
 language: node_js
 node_js:
-- 12
+  - 12
 cache: npm
 branches:
   only:
-  - master
+    - master
 
 addons:
-  ssh_known_hosts: $IP
+  ssh_known_hosts: ${IP}
 before_install:
   - openssl aes-256-cbc -K $encrypted_024e66b057a6_key -iv $encrypted_024e66b057a6_iv
     -in id_rsa.enc -out ~/.ssh/id_rsa -d
   - chmod 600 ~/.ssh/id_rsa
-    
+
 script:
-- hexo generate
-- ls
-- scp -o stricthostkeychecking=no -r ./public/index.html root@39.108.65.147:/www/wwwroot/hello
-- cd public
-- echo 'blog.genji.xyz' > CNAME
-
-
-
+  - hexo generate
+  - ls
+  - scp -o stricthostkeychecking=no -r ./public/index.html root@${IP}:/www/wwwroot/hello
+  - cd public
+  - echo 'blog.genji.xyz' > CNAME
 
 deploy:
   provider: pages
@@ -33,11 +30,9 @@ deploy:
     branch: master
   local-dir: public
 
-after_success:
-  -ls
+after_success: -ls
   - npm prune --production
   -ls
   - scp -o stricthostkeychecking=no -r ./* root@$IP:/root/www/wwwroot/hello/
-  
-  -ls 
 
+  -ls
