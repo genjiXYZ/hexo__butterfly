@@ -1,7 +1,4 @@
 
-
-
-
 # Main menu navigation (導航目錄)
 # --------------------------------------
 
@@ -15,11 +12,11 @@ menu:
   TimeLine: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
-  Git: /git/ || fas fa-code-fork 
   其他||fas fa-list:
     - Music || /music/ || fas fa-music
     - Movie || /movies/ || fas fa-video
   链接: /link/ || fas fa-link
+  留言: /comment/ || fas fa-comments
   关于: /about/ || fas fa-heart
 
 # Code Blocks (代碼相關)
@@ -41,7 +38,7 @@ copy:
 # formal:
 #   icon: link || the description
 social:
-  fab fa-github: https://github.com/xxxxx || Github
+  fab fa-github: https://github.com/genjiXYZ || Github
   fas fa-envelope: mailto:895939059@qq.com || Email
 
 # search (搜索)
@@ -65,33 +62,17 @@ local_search:
     input_placeholder: Search for Posts
     hits_empty: "We didn't find any results for the search: ${query}" # if there are no result
 
-# Math (數學)
-# --------------------------------------
-# About the per_page
-# if you set it to true, it will load mathjax/katex script in each page (true 表示每一頁都加載js)
-# if you set it to false, it will load mathjax/katex script according to your setting (add the 'mathjax: true' in page's front-matter)
-# (false 需要時加載，須在使用的 Markdown Front-matter 加上 mathjax: true)
 
-# MathJax
-mathjax:
-  enable: false
-  per_page: false
-
-# KaTeX
-katex:
-  enable: false
-  per_page: false
-  hide_scrollbar: true
 
 # Image (圖片設置)
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: /img/favicon.png
+favicon: https://picgo.genji.xyz/76logo/favicon.png
 
 # Avatar (頭像)
 avatar:
-  img: /img/avatar.png
+  img: https://picgo.genji.xyz/76logo/circle_640.png
   effect: false
 
 # the banner image of home page
@@ -683,7 +664,7 @@ note:
   #  - modern    bs-callout new (v2-v3) alert style.
   #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
   #  - disabled  disable all CSS styles import of note tag.
-  style: modern
+  style: simple
   icons: true
   border_radius: 3
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
@@ -833,3 +814,23 @@ CDN:
   aplayer_css: https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css
   aplayer_js: https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js
   meting_js: https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js
+
+
+
+  # Math (數學)
+# --------------------------------------
+# About the per_page
+# if you set it to true, it will load mathjax/katex script in each page (true 表示每一頁都加載js)
+# if you set it to false, it will load mathjax/katex script according to your setting (add the 'mathjax: true' in page's front-matter)
+# (false 需要時加載，須在使用的 Markdown Front-matter 加上 mathjax: true)
+
+# MathJax
+mathjax:
+  enable: false
+  per_page: false
+
+# KaTeX
+katex:
+  enable: false
+  per_page: false
+  hide_scrollbar: true
