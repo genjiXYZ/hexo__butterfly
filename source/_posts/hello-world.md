@@ -1,38 +1,115 @@
 ---
-title: Hello World
+title: tag plugins
+
+
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+## 提示块
 
-## Quick Start
+```Markdown
+{% note [class] [no-icon] %}
+Any content (support inline tags too.io).
+{% endnote %}
 
-### Create a new post
+[class]   : default | primary | success | info | warning | danger.
+[no-icon] : Disable icon in note.
 
-``` bash
-$ hexo new "My New Post"
+All parameters are optional.
+
 ```
 
-More info: [Writing](https://hexo.io/docs/writing.html)
 
-### Run server
+{% note default %}
+default 提示塊標籤
+{% endnote %}
 
-``` bash
-$ hexo server
+{% note primary no-icon %}
+primary 提示塊標籤
+{% endnote %}
+
+{% note success %}
+success 提示塊標籤
+{% endnote %}
+
+{% note info %}
+info 提示塊標籤
+{% endnote %}
+
+{% note warning %}
+warning 提示塊標籤
+{% endnote %}
+
+{% note danger %}
+danger 提示塊標籤
+{% endnote %}
+
+## 图形
+
+
+
+```Markdown
+{% mermaid %}
+pie
+    title Key elements in Product X
+    "Calcium" : 42.96
+    "Potassium" : 50.05
+    "Magnesium" : 10.01
+    "Iron" :  5
+{% endmermaid %}
+
+
+
 ```
+{% mermaid %}
+pie
+    title Key elements in Product X
+    "Calcium" : 42.96
+    "Potassium" : 50.05
+    "Magnesium" : 10.01
+    "Iron" :  5
+{% endmermaid %}
 
-More info: [Server](https://hexo.io/docs/server.html)
 
-### Generate static files
 
-``` bash
-$ hexo generate
+## tab 
+```markdown
+
+{% tabs test1 %}
+<!-- tab -->
+**This is Tab 1.**
+<!-- endtab -->
+
+<!-- tab -->
+**This is Tab 2.**
+<!-- endtab -->
+
+<!-- tab -->
+**This is Tab 3.**
+<!-- endtab -->
+{% endtabs %}
+
+
+
 ```
+{% tabs test1 %}
+<!-- tab -->
+**This is Tab 1.**
+<!-- endtab -->
 
-More info: [Generating](https://hexo.io/docs/generating.html)
+<!-- tab -->
+**This is Tab 2.**
+<!-- endtab -->
 
-### Deploy to remote sites
+<!-- tab -->
+**This is Tab 3.**
+<!-- endtab -->
+{% endtabs %}
 
-``` bash
-$ hexo deploy
-```
 
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+
+
+## btn
+{% btn [url],[text],[icon],[color] [style] [layout] [position] [size] %}
+
+{% btn 'http://blog.genji.xyz',hello,far fa-hand-point-right,green larger %}
+
+
