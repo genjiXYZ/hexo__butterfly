@@ -1,26 +1,150 @@
-- class_name: 友情鏈接
-  class_desc: 
+- class_name: 正在更新中 每天10个...
+  class_desc:
   link_list:
     - name: 无情
-      link: 
+      link:
       avatar:
       descr: 没有朋友哈哈 无情!
+
+- class_name: 前端工具
+  class_desc:
+  link_list:
+    - name: Can i use
+      link: https://www.caniuse.com/
+      avatar: https://www.caniuse.com/img/favicon-128.png
+      descr: 浏览器兼容查看
+
+    - name: reg101
+      link: https://regex101.com/
+      avatar: https://regex101.com/static/assets/android-icon-192x192.png
+      descr: 正则测试
+
+    - name: postwoman
+      link: https://postwoman.io/
+      avatar: https://postwoman.io/_nuxt/icons/icon_64.9359c9.png
+      descr: postman 女朋友
+
+    - name: 奇迹秀工具箱
+      link: http://www.qijishow.com/down/standard.html
+      avatar: http://www.qijishow.com/down/assets/images/logo.png
+      descr: 屏幕尺寸 dpi
+
+    - name: sassmeister
+      link: https://www.sassmeister.com/
+      avatar: https://www.sass.hk/images/sass.png
+      descr: sass 函数在线测试
+
+   
+- class_name: 设计
+  class_desc:
+  link_list:
+    - name: dribbble
+      link: https://dribbble.com/
+      avatar: https://cdn.dribbble.com/assets/dribbble-ball-192-ec064e49e6f63d9a5fa911518781bee0c90688d052a038f8876ef0824f65eaf2.png
+      descr: 
+    - name: behance
+      link: https://www.behance.net/
+      avatar: https://a5.behance.net/9ddd37f057578d0a657d4ac1e56bfb251d8b6521/img/site/favicon.ico?cb=264615658
+      descr: 
+
+- class_name: 插件
+  class_desc:
+  link_list:
+    - name: valine
+      link: https://valine.js.org/
+      avatar: https://valine.js.org/images/valine.png
+      descr: 一款快速、简洁且高效的无后端评论系统。
+
+   
+
+- class_name: 云
+  class_desc: 云玩家
+  link_list:
+    - name: 七牛云
+      link: https://www.qiniu.com/
+      avatar: https://www.qiniu.com/assets/logo-zh-dbef5f389fb045c60f710d4d4e6225e9015c1684b1a1f7b81e000b952581dcd4.png
+      descr:
+
+    - name: 又拍云
+      link: https://www.upyun.com/
+      avatar: https://www.upyun.com/static/favicon-64x64.png
+      descr:
+
+    - name: daocloud
+      link: https://www.daocloud.io/
+      avatar: https://www.daocloud.io/static/icons/icon_dce.png
+      descr: docker 管理
+
+    - name: coding
+      link: https://coding.net/
+      avatar: https://tva4.sinaimg.cn/crop.177.83.444.444.180/005CNqf4jw8f1dxztkjsrj30m80gq0sv.jpg?KID=imgbed,tva&Expires=1593811258&ssig=JHCLn1jY3z
+      descr: 一站式 DevOps
+
     
 
-- class_name: 網站
-  class_desc: 值得推薦的網站
+- class_name: mac软件
+  class_desc: 好用没毛病(有的有快乐学习版)
   link_list:
-    - name: Youtube
-      link: https://www.youtube.com/
-      avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
-      descr: 視頻網站
-    - name: Weibo
-      link: https://www.weibo.com/
-      avatar: https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png
-      descr: 中國最大社交分享平台
-    - name: Twitter
-      link: https://twitter.com/
-      avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
-      descr: 社交分享平台
+    - name: Sip
+      link: https://sipapp.io/pricing/
+      avatar: https://sipapp.io/assets/img/favicon/96x96.png
+      descr: 取色 $10/year
 
+    - name: Xnip
+      link: https://apps.apple.com/cn/app/xnip-%E6%88%AA%E5%9B%BE-%E6%A0%87%E6%B3%A8/id1221250572?mt=12
+      avatar: https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/3f/f3/20/3ff32044-e16d-3558-cd98-343c821e0e7a/icon.png/230x0w.png
+      descr: 截图 长图  24¥/year
 
+    - name: picgo
+      link: https://github.com/Molunerfinn/PicGo
+      avatar: https://raw.githubusercontent.com/Molunerfinn/test/master/picgo/New%20LOGO-150.png
+      descr: 上传到图床软件 支持很多
+
+    - name: typero
+      link: https://www.typora.io/
+      avatar: https://www.typora.io/img/favicon-64.png
+      descr: markdown 神器能自动上传到图床
+
+    - name: terminus
+      link: https://github.com/Eugeny/terminus
+      avatar: https://pic2.mac69.com/ico/201906/14105907_375f49ab8d.png
+      descr: 终端 ssh 比较方便 连服务器器
+
+    - name: zeplin
+      link: https://zeplin.io/
+      avatar: https://yt3.ggpht.com/a/AATXAJxpz-jF_ER6xJYTcarqyw3hvFzEc8aimO_G7g=s68-c-k-c0xffffffff-no-rj-mo
+      descr: 自动切图标注
+
+    - name: docker
+      link: https://www.docker.com/
+      avatar: https://www.docker.com/sites/default/files/d8/Docker-R-Logo-08-2018-Monochomatic-RGB_Moby-x1.png
+      descr: 没啥说的
+    - name: clashX
+      link: https://github.com/yichengchen/clashX
+      avatar: https://raw.githubusercontent.com/Dreamacro/clash/master/docs/logo.png
+      descr: 上网
+
+    - name: postman
+      link: https://www.postman.com/
+      avatar: https://src.onlinedown.net/d/file/p/2019-03-08/c9cbe27769e1de14c484e9b4130fb8e5.png
+      descr: api
+    - name: Robo 3T
+      link: https://robomongo.org/
+      avatar: https://robomongo.org/static/robomongo-128x128-129df2f1.png
+      descr: mongodb
+    - name: keka
+      link: https://apps.apple.com/cn/app/keka/id470158793?mt=12
+      avatar: https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/ac/e8/e6/ace8e60f-d0f6-23c0-42c1-17a518009276/Keka.png/230x0w.png
+      descr: 压缩 解压
+    - name: mos
+      link: https://github.com/Caldis/Mos
+      avatar: https://mos.caldis.me/resources/image/logo-big.png
+      descr: smooth scroll
+    - name: TinyPNG4Mac
+      link: https://github.com/kyleduo/TinyPNG4Mac
+      avatar: https://raw.githubusercontent.com/kyleduo/TinyPNG4Mac/master/preview/icon.png
+      descr: TinyPNG
+    - name: kap
+      link: https://getkap.co/
+      avatar: https://getkap.co/static/favicon/icon-256.png
+      descr: gif MP4
