@@ -82,15 +82,15 @@ index_img: https://picgo.genji.xyz/blog/bg/hardcoding1.png
 default_top_img: https://picgo.genji.xyz/blog/bg/hardcoding2.png
 
 # the banner image of archive page
-archive_img: https://picgo.genji.xyz/blog/bg/hardcoding3.png
+archive_img: https://picgo.genji.xyz/blog/bg/hardcoding2.png
 
 # the banner image of tag page
 # tag page, look like https://xxxxxxxxx.com/tags/butterfly
-tag_img: https://picgo.genji.xyz/blog/bg/hardcoding4.png
+tag_img: https://picgo.genji.xyz/blog/bg/hardcoding2.png
 
 # the banner image of category page
 # category page, look like https://xxxxxxxxx.com/categories/butterfly
-category_img: https://picgo.genji.xyz/blog/bg/hardcoding5.png
+category_img: https://picgo.genji.xyz/blog/bg/hardcoding2.png
 
 # If you are using hexo-douban, you can configure it (如果你有使用 hexo-douban,可配置這個)
 # douban:
