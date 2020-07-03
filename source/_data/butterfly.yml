@@ -416,7 +416,7 @@ qihu_site_verification:
 
 theme_color:
   enable: true
-  main: "#48466d"
+  main: "#AAD8E9"
   paginator: "#3d84a8"
   button_hover: "#46cdcf"
   text_selection: "#3d84a8"
