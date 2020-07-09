@@ -22,6 +22,7 @@ categories: responsive
   1、需要在viewport中添加 viewport-fit=cover，js和meta标签中都要添加；
   2、同时iPhone X屏幕底部圆弧区域占位高度使用 calc(constant(safe-area-inset-bottom) * 3) 作为padding-bottom， margin-bottom等高度属性的值。iPhone X上，高清适配方案中，此值等价于.34rem，即34逻辑像素。根据实际情况可以修改* 3这个系数来调整占位区域的高度，但一定要使用constant(safe-area-inset-bottom)。在ios11下，非iPhone X的设备此值为0，使用时需要注意样式覆盖的情况。
 
+### postcss   px2rem
 ```js
 //vue.config.js
 
