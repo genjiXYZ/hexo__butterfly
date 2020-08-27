@@ -1,0 +1,64 @@
+---
+title: Docker 命令
+top_img: http://pic.genji.xyz/travis/logo/topimg.png
+description: "docker 命令记录贴"
+keywords: "docker"
+date: 2020年08月27日09:40:54
+cover: https://picgo.genji.xyz/blog/posts/docker.png
+tags: [docker,linux]
+categories: CI/CD
+---
+# docker 命令 
+
+```bash
+docker pull  name [:tag|@digest]
+
+eg 
+docker pull debian
+docker pull debian:latest
+docker pull gitea/gitea:latest
+docker pull ubuntu@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2
+
+```
+
+```bash
+docker run -d   --name="something" -p 90:80  -v /var/lib/gitea:/data gitea/gitea:latest --restart=always
+
+-d 后台
+--name 命名
+-p 端口映射 前内部 后外部
+-v 共享卷, 也可以理解挂载到相应目录 前外部 后内部
+--restart 重启时候 自动运行
+
+```
+
+```bash
+docker images
+docker ps
+
+docker rename oldName newName      (container) 
+dokcer rename 容器ID name:tag (images)
+
+docker stop/start/restart id/ name
+
+docker rm CONTAINERID
+
+docker rmi IMAGEID
+docker rmi REPOSITORY:TAG
+
+docker exec -it id/name /bin/bash
+
+
+
+```
+
+```bash
+docker save name >/root/name.tar
+docker load <name.tar
+
+docker export 98ca36> ubuntu.tar
+
+
+
+```
+
