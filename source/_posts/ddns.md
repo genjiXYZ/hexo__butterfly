@@ -22,6 +22,10 @@ ddns  ( Dynamic domain name server )   就是前面加个  Dynamic  动态的 .
 
 因为 你向电信爸爸申请的公网ip 是每天都变化的,甚至重启光猫有时候也会变.(没有公网ip的可以用内网穿透,这里不说了)
 
+-----
+
+
+
 
 
 
@@ -40,15 +44,27 @@ ddns  ( Dynamic domain name server )   就是前面加个  Dynamic  动态的 .
 
 ![image-20200917014310786](https://picgo.genji.xyz/blog/posts/image-20200917014310786.png)
 
-##### 主机名称  就是你在服务商(这里是花生壳)注册的域名.
+{% blockquote %}
+
+主机名称  就是你在服务商(这里是花生壳)注册的域名.
 
 一开始没懂什么是`主机名称`  哈哈 域名你就说域名呗..
+
+{% endblockquote %}
+
+
 
 有的服务商第一次使用的话,可能需要你填写当前的公网ip.都没问题的话会显示:
 
 ![image-20200917015141777](https://picgo.genji.xyz/blog/posts/image-20200917015141777.png)
 
-##### 这里注意下 小米路由器好像只能启用 一个,不能多个同时启用.
+
+
+{% blockquote %}
+
+这里注意下 小米路由器好像只能启用 一个,不能多个同时启用.
+
+{% endblockquote %}
 
 这时候就可以用域名访问你的ip . ip变化的话,域名解析 自动改成你现在ip . 
 
