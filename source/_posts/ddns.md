@@ -90,6 +90,8 @@ ddns  ( Dynamic domain name server )   就是前面加个  Dynamic  动态的 .
 
 所以就有了方案二
 
+-----
+
 
 
 ## 方案二
@@ -120,7 +122,11 @@ ddns  ( Dynamic domain name server )   就是前面加个  Dynamic  动态的 .
 
 ![image-20200917021829641](https://picgo.genji.xyz/blog/posts/image-20200917021829641.png)
 
+{% blockquote %}
+
 注意如果你是旁路由这里就不能是默认的`网络`了,因为这里ip是你主路由dhcp给旁路由的ip 比如:192.168.3.200,不是真正公网ip,要改成url的方式.
+
+{% endblockquote %}
 
 ![image-20200917022152035](https://picgo.genji.xyz/blog/posts/image-20200917022152035.png)
 
@@ -148,7 +154,7 @@ ddns  ( Dynamic domain name server )   就是前面加个  Dynamic  动态的 .
 
 说明很详细.不多赘述
 
-申请个 秘钥 记住id  和token
+申请个 秘钥 记住id  和token,吧文件传到 软路由 重启不会重置的文件夹里 我这里传到了/mnt/..........
 
 配置下`config.json`
 
