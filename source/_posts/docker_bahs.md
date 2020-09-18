@@ -5,8 +5,8 @@ description: "docker 命令记录贴"
 keywords: "docker"
 date: 2020年08月27日09:40:54
 cover: https://picgo.genji.xyz/blog/posts/docker.png
-tags: [docker,linux]
-categories: CI/CD
+tags: [docker]
+categories: docker
 ---
 # docker 命令 
 
