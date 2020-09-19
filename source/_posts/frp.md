@@ -1,7 +1,6 @@
 ---
 title: frp 内网穿透
-top_img: https://picgo.genji.xyz/blog/posts/frp0.png
-description: "frp内网穿透"
+description: "frp内网穿透 仅仅为了访问家里的设备还好."
 keywords: "frp"
 date: 2018-01-05 00:00:00
 cover: https://picgo.genji.xyz/blog/posts/frp0.png
@@ -77,8 +76,8 @@ log_file = /www/server/panel/plugin/btp_frps/temp/frps.log
 
 
 ```
-  
-    
+
+​    
 
 5. 运行
 
