@@ -1,7 +1,7 @@
 ---
 
 title: Docker 命令
-top_img: http://pic.genji.xyz/travis/logo/topimg.png
+
 description: "docker 命令记录贴"
 keywords: "docker"
 date: 2020年08月27日09:40:54

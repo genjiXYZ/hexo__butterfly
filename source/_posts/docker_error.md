@@ -1,6 +1,5 @@
 ---
 title: Docker 报错
-top_img: http://pic.genji.xyz/travis/logo/topimg.png
 description: "docker 报错记录"
 keywords: "docker"
 date: 2020年08月27日09:40:54
@@ -10,6 +9,7 @@ categories: docker
 ---
 
 ## 在容器内无法 连接网络
+
 在旁路由 docker run 一个 镜像时候 出现
 java.Net.UnknownHostException 
 

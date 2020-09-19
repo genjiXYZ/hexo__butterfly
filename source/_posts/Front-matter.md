@@ -2,6 +2,7 @@
 title: Front-matter
 description: 一些 Front-matter 
 date: 2020-01-01 00:00:00
+cover:  
 ---
 ## 提示块
 
@@ -126,7 +127,7 @@ title: 【必需】頁面標題
 date: 【必需】頁面創建日期 
 updated: 【可選】文章更新日期 
 tags:  	【可選】文章標籤 
-categories: 【可選】文章分類
+categories: 【可選】文章分類 数组 [1,2,3]表示1>2>3 子分类
 keywords: 【可選】文章關鍵字 
 description: 【可選】文章描述
 top_img 【可選】文章頂部圖片
