@@ -3,7 +3,7 @@ title: 移动端 rem自适应
 top_img: https://cdn.dribbble.com/users/2181562/screenshots/11874821/media/7f180ffc5c497dabfb96f9dac1647ddb.jpg
 description: "rem 自适应"
 keywords: "travis"
-date: 2018-01-05 00:00:00
+date: 2020-01-01 00:00:00
 cover: https://cdn.dribbble.com/users/2181562/screenshots/11874821/media/7f180ffc5c497dabfb96f9dac1647ddb.jpg
 tags: [rem, meta, postcss, px2rem, 移动端]
 categories: responsive

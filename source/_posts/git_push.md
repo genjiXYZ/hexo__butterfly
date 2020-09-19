@@ -3,7 +3,7 @@ title: Git 同时push到 多个仓库
 top_img: https://picgo.genji.xyz/blog/posts/git_push.jpg
 description: "Git push到多个仓库 "
 keywords: "git"
-date: 2018-01-05 00:00:00
+date: 2020-01-02 00:00:00
 cover: https://picgo.genji.xyz/blog/posts/git_push.jpg
 tags: [git]
 categories: git
