@@ -7,7 +7,7 @@ cover:  https://picgo.genji.xyz/blog/posts/Xnip2020-09-19_14-13-43.png
 
 
 tags:  	网络,git,proxy
-categories: 网络,git,proxy
+categories: "网络","git","proxy"
 keywords: git,proxy,shell
 
 
