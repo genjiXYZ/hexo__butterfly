@@ -1,7 +1,7 @@
 ---
-title: tag plugins
+title: Front-matter
 description: 一些 Front-matter 
-date: date: 2020-01-01 00:00:00
+date: 2020-01-01 00:00:00
 ---
 ## 提示块
 
@@ -106,10 +106,55 @@ pie
 
 
 
-
 ## btn
+
 {% btn [url],[text],[icon],[color] [style] [layout] [position] [size] %}
 
 {% btn 'http://blog.genji.xyz',hello,far fa-hand-point-right,green larger %}
+
+
+
+
+
+
+
+## front-matter
+
+```
+---
+title: 【必需】頁面標題 
+date: 【必需】頁面創建日期 
+updated: 【可選】文章更新日期 
+tags:  	【可選】文章標籤 
+categories: 【可選】文章分類
+keywords: 【可選】文章關鍵字 
+description: 【可選】文章描述
+top_img 【可選】文章頂部圖片
+comments: 	【可選】顯示文章評論模塊 (默認 true)
+cover:  【可選】文章縮略圖 (如果沒有設置 top_img, 文章頁頂部將顯示縮略圖，可設為 false / 圖片地址 / 留空)
+
+
+
+toc:
+toc_number:
+auto_open:
+copyright:
+copyright_author:
+copyright_author_href:
+copyright_url:
+copyright_info:
+mathjax:
+katex:
+aplayer:
+highlight_shrink:
+
+---
+
+
+
+https://demo.jerryc.me/posts/dc584b87/#Front-matter
+```
+
+
 
 

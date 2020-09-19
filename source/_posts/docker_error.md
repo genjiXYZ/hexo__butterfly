@@ -12,7 +12,7 @@ categories: docker
 ## 在容器内无法 连接网络
 在旁路由 docker run 一个 镜像时候 出现
 java.Net.UnknownHostException 
- 
+
  首先觉得是host 问题所以添加host,
  {% note [info] [no-icon] %}
  不在直接在容器中 `/etc/hosts` 直接添加 容器容器回重置 ,
