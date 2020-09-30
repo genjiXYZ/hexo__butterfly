@@ -2,8 +2,8 @@
 title: Docker 报错
 description: "docker 报错记录"
 keywords: "docker"
-date: 2020年08月27日09:40:54
-cover: https://picgo.genji.xyz/blog/posts/docker.png
+date: 2020-02-20
+cover: https://picgo.genji.xyz/blog/posts/dockerjpg.jpg
 tags: [docker]
 categories: docker
 ---
