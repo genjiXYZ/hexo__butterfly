@@ -2,9 +2,10 @@
 title: github webhook
 date: 2020-09-02 00:00:00
 updated: 
+top_img:
 cover:  https://picgo.genji.xyz/blog/posts/image-20200930154903141.png
-description: 像素电子时钟 制作
 
+description: github webhook
 tags:  	[webhook]
 categories: workflow
 keywords: "github webhook,webhook"
@@ -20,7 +21,7 @@ keywords: "github webhook,webhook"
 
 ##  什么是web hooks
 
-![image-20200930151443628](/Users/liulingyue/Desktop/hexo__butterfly/source/_posts/image-20200930151443628.png)
+![image-20200930151443628](https://picgo.genji.xyz/blog/posts/image-20200930151443628.png)
 
 -----
 
@@ -67,7 +68,7 @@ const webhook = require('./webhook');
 
 ## 配置
 
-![image-20200930154309950](/Users/liulingyue/Desktop/hexo__butterfly/source/_posts/image-20200930154309950.png)
+![image-20200930154309950](https://picgo.genji.xyz/blog/posts/image-20200930154309950.png)
 
 填写 `任意名称`  和你要`执行的脚本`  ,提交后会给你 带有秘钥的 链接
 
@@ -93,20 +94,19 @@ pm2 start app.js  #  可以继续 反向代理啥的
 
 使用 postman  post 一下 ,
 
-![image-20200930154106968](/Users/liulingyue/Desktop/hexo__butterfly/source/_posts/image-20200930154106968.png)
+![image-20200930154106968](https://picgo.genji.xyz/blog/posts/image-20200930154106968.png)
 
 
 
-![image-20200930154359603](/Users/liulingyue/Desktop/hexo__butterfly/source/_posts/image-20200930154359603.png)
+![image-20200930154359603](https://picgo.genji.xyz/blog/posts/image-20200930154359603.png)
 
 可以看到调用次数增加,执行的日志也有记录 .
 
 ## github setting
 
-![image-20200930154552727](/Users/liulingyue/Desktop/hexo__butterfly/source/_posts/image-20200930154552727.png)
+![image-20200930154552727](https://picgo.genji.xyz/blog/posts/image-20200930154552727.png)
 
 你可以直接填写带有秘钥的链接,也可以分开写.
-
 
 
 over
