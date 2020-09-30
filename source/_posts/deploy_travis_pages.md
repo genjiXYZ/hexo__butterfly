@@ -1,10 +1,10 @@
 ---
 title: Travis CI/CD(一) github pages
-top_img: http://pic.genji.xyz/travis/logo/topimg.png
+top_img: 
 description: 利用travis 在github pages 生成静态网站
 keywords: travis
 date: 2020-02-01 00:00:00
-cover: http://pic.genji.xyz/travis/logo/TravisC.png
+cover: https://picgo.genji.xyz/blog/posts/TravisC.png
 tags: [Travis,github-pages,CNAME,CI/CD]
 categories: [Workflow]
 ---
