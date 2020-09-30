@@ -1,13 +1,15 @@
 ---
 
 title: Docker 命令
+date: 2020-01-20
+updated: 
+top_img:
+cover: https://picgo.genji.xyz/blog/posts/dockerjpg.jpg
 
 description: "docker 命令记录贴"
 keywords: "docker"
-date: 2020-02-19
-cover: https://picgo.genji.xyz/blog/posts/dockerjpg.jpg
 tags: [docker]
-categories: docker
+categories: [Docker]
 ---
 # docker 命令
 

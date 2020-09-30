@@ -2,10 +2,10 @@
 title: Docker 报错
 description: "docker 报错记录"
 keywords: "docker"
-date: 2020-02-20
+date: 2020-01-20
 cover: https://picgo.genji.xyz/blog/posts/dockerjpg.jpg
 tags: [docker]
-categories: docker
+categories: [Docker]
 ---
 
 ## 在容器内无法 连接网络

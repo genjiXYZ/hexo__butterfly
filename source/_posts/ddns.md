@@ -1,5 +1,6 @@
 ---
 title: ddns
+date: 2020-01-06 00:00:00
 top_img: https://picgo.genji.xyz/blog/posts/images.jpeg
 description: "有了公网ip,试试ddns,不用内网穿透了就"
 keywords: "ddns"
@@ -12,15 +13,25 @@ categories: 网络
 
 
 
+#  <i class="fas fa-dog"></i>  ddns
 
 
-Dns ( domain name server )  有过服务器的都懂    域名解析
+
+Dns ( domain name server )  
 
 ddns  ( Dynamic domain name server )   就是前面加个  Dynamic  动态的 .
 
-为什么要用ddns ?而不是直接在 服务商dns解析  添加个a 记录 指向 你的ip 呢  ?
+为什么要用ddns ? 而不是直接在 服务商dns解析  添加个a 记录 指向 你的ip 呢  ?
 
 因为 你向电信爸爸申请的公网ip 是每天都变化的,甚至重启光猫有时候也会变.(没有公网ip的可以用内网穿透,这里不说了)
+
+比如可以用下面 两个 ,等等.
+
+
+
+{% btn 'https://blog.genji.xyz/2020/01/05/frp/', Frp,fas fa-dog,block blue larger %}
+
+{% btn 'https://hsk.oray.com/', 花生壳,fas fa-paw,block green larger %}
 
 -----
 

@@ -2,10 +2,10 @@
 title: frp 内网穿透
 description: "frp内网穿透 仅仅为了访问家里的设备还好."
 keywords: "frp"
-date: 2018-01-05 00:00:00
+date: 2020-01-05 00:00:00
 cover: https://picgo.genji.xyz/blog/posts/frp0.png
 tags: [frp,内网穿透]
-categories: frp
+categories: [网络]
 ---
 # frp 内网穿透/映射
 

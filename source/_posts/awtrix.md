@@ -19,9 +19,9 @@ keywords: "awtrix,像素电子时钟"
 
 
 
-# awtrix
+#  <i class="fas fa-dog"></i> awtrix
 
-{% note default %}
+{% note success no-icon %}
 最开始是在YouTube看到的这个项目,当时这个项目还是 version 1.0  
 现在都有`pro`了!  闲着没事更新一下
 {% endnote %}
@@ -30,7 +30,7 @@ keywords: "awtrix,像素电子时钟"
 
 
 
-## 功能
+## 硬件功能删减
 
 我决定只保留基本的功能,
 
@@ -159,7 +159,7 @@ Asia/Shanghai
 
 
 
-{% note default %}
+{% note warning flat %}
 
 当某个女孩子要来你家时候,你用手机提前设置好,岂不是哇塞.
 

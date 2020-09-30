@@ -1,10 +1,10 @@
 ---
 title: git 终端 设置代理 
-date: 2020-03-02 00:00:00
+date: 2020-01-03 00:00:00
 updated: 
 cover:  https://picgo.genji.xyz/blog/posts/Xnip2020-09-19_14-13-43.png
-tags:  	网络,git,proxy
-categories: "proxy"
+tags:  	网络,git,proxy,终端
+categories: [网络]
 keywords: git,proxy,shell
 description: git/终端/设置代理, npm,homebrew,git不在龟速
 ---
@@ -19,7 +19,7 @@ description: git/终端/设置代理, npm,homebrew,git不在龟速
 
 端口看你们代理怎么设置的 常见的1080 1086 7890
 
-我用的clash  所以默认的是7890
+我用的`clas ` 所以默认的是7890,  而且是混合的(http socks5都为7890)
 
 {% endnote %}
 
@@ -38,7 +38,11 @@ git config --global https.proxy https://127.0.0.1:7890
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 
-//局部
+//只为 github 
+git config --global http.https://github.com.proxy https://127.0.0.1:7890
+git config --global https.https://github.com.proxy https://127.0.0.1:7890
+
+
 
 ```
 
@@ -88,7 +92,7 @@ git clone  确实很快了
 
 Npm   你可以用 nrm 切换taobao源,但是有的时候并不是最新的会报错或者未知bug
 
-homebrew 就更慢了 切换中科/清华源  要改好多,而且有的软件还没有.
+homebrew 就更慢了 切换中科/清华源  要改好多设置,而且有的软件还没有,不太好用.
 
 所以这时候要用 这个方法了
 
