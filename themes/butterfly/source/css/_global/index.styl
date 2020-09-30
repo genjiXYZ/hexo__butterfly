@@ -31,6 +31,11 @@ html
   height: 100%
   font-size: 20px
 
+
+a,img
+  cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/pointer.cur),default;
+
+
 body
   position: relative
   min-height: 100%
@@ -40,6 +45,7 @@ body
   font-family: $font-family
   line-height: $text-line-height
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/default.cur),default;
 
   if !hexo-config('copy.enable')
     user-select: none
