@@ -5,10 +5,9 @@ description: 利用travis 在github pages 生成静态网站
 keywords: travis
 date: 2020-02-03 00:00:00
 cover: http://pic.genji.xyz/travis/logo/TravisC.png
-tags: [Travis , github-pages, CNAME]
-categories: CI/CD
+tags: [Travis,github-pages,CNAME,CI/CD]
+categories: workflow
 ---
-
 
 # Travis CI/CD 构建(github pages 篇)
 

@@ -2,7 +2,7 @@
 title: awtrix
 date: 2020-09-02 00:00:00
 updated: 
-cover:  https://picgo.genji.xyz/blog/posts/Xnip2020-09-19_14-13-43.png
+cover:  https://picgo.genji.xyz/blog/posts/image-20200930140531153.png
 description: 像素电子时钟 制作
 
 

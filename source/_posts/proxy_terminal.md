@@ -74,6 +74,12 @@ Host github.com
 
 
 
+-----
+
+
+
+
+
 # 终端设置代理
 
 git clone  确实很快了
@@ -182,10 +188,14 @@ URL     : http://www.cip.cc/14.155.87.203
 
 
 
-## 懒人模式 Alfred
+##  Alfred 执行
 
 
 
 ![image-20200919154645223](https://picgo.genji.xyz/blog/posts/image-20200919154645223.png)
 
 在alfre workflow中添加即可
+
+
+
+![image-20200930144414936](https://picgo.genji.xyz/blog/posts/image-20200930144414936.png)
