@@ -8,9 +8,9 @@ top_img:
 cover: https://picgo.genji.xyz/blog/posts/TravisC.png
 
 tags: [Travis,ssh,CI/CD]
-categories: [Workflow]
-keywords: [Travis,ssh]
 
+keywords: [Travis,ssh]
+categories: [Workflow,travis]
 ---
 
 

@@ -3,9 +3,9 @@ title: git 终端 设置代理
 date: 2020-01-03 00:00:00
 updated: 
 cover:  https://picgo.genji.xyz/blog/posts/Xnip2020-09-19_14-13-43.png
-tags:  	网络,git,proxy,终端
+tags:  	[网络,git,proxy,终端]
 categories: [网络]
-keywords: git,proxy,shell
+keywords: [git,proxy,shell]
 description: git/终端/设置代理, npm,homebrew,git不在龟速
 ---
 

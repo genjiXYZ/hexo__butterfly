@@ -6,7 +6,7 @@ keywords: travis
 date: 2020-02-01 00:00:00
 cover: https://picgo.genji.xyz/blog/posts/TravisC.png
 tags: [Travis,github-pages,CNAME,CI/CD]
-categories: [Workflow]
+categories: [Workflow,travis]
 ---
 
 # Travis CI/CD 构建(github pages 篇)

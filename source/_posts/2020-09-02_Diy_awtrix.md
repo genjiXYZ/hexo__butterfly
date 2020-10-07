@@ -7,7 +7,7 @@ description: 像素电子时钟 制作
 
 
 tags:  	[awtrix]
-categories: diy
+categories: Diy
 keywords: "awtrix,像素电子时钟"
 ---
 

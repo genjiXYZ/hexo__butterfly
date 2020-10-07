@@ -8,7 +8,7 @@ description: github action
 
 keywords: "github action"
 tags: [CI/CD,github action]
-categories: [Workflow]
+categories: [Workflow,action]
 ---
 
 
