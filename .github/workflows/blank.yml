@@ -20,7 +20,7 @@ jobs:
         node-version: 12.x
         
     
-    - name: install yarn
+    - name: install npm
       run: | 
        npm --version
        npm install
