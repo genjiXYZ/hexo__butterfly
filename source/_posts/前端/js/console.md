@@ -120,7 +120,7 @@ console.groupEnd();
 console.log("执行下一个个命令");
 ```
 
-![image-20201128140913499](/Users/lly/Desktop/未命名文件夹 4/hexo__butterfly/source/_posts/前端/js/image-20201128140913499.png)
+![image-20201128140913499](https://picgo.genji.xyz/blog/posts/image-20201128140913499.png)
 
 ## console.time()和 console.timeEnd()
 
@@ -162,7 +162,7 @@ fn();
 console.profileEnd();
 ```
 
-![image-20201128140338413](/Users/lly/Desktop/未命名文件夹 4/hexo__butterfly/source/_posts/前端/js/image-20201128140338413.png)
+![image-20201128140338413](https://picgo.genji.xyz/blog/posts/image-20201128140338413.png)
 
 ## 自定义内容
 
@@ -183,7 +183,7 @@ console.log('%o',document.body.firstElementChild);
 console.log('%O',document.body.firstElementChild);
 ```
 
-![image-20201128160732266](/Users/lly/Desktop/未命名文件夹 4/hexo__butterfly/source/_posts/前端/js/image-20201128160732266.png)
+![image-20201128160732266](https://picgo.genji.xyz/blog/posts/image-20201128160732266.png)
 
 ```js
 console.log(
