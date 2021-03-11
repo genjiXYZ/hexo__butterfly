@@ -21,7 +21,7 @@ jobs:
         
     
     - name: install yarn
-    - run: 
+      run: | 
        yarn --version
        yarn install
        yarn bulid

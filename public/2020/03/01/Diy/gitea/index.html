@@ -1,0 +1,303 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>在 树莓派/openwrt 中搭建gitea | blog.genji.xyz</title><meta name="keywords" content="树莓派,docker,端口映射"><meta name="author" content="Liu Lingyue"><meta name="copyright" content="Liu Lingyue"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="朋友的 树莓派 , 落灰了.拿来试试.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 树莓派&#x2F;openwrt 中搭建gitea">
+<meta property="og:url" content="https://blog.genji.xyz/2020/03/01/Diy/gitea/index.html">
+<meta property="og:site_name" content="blog.genji.xyz">
+<meta property="og:description" content="朋友的 树莓派 , 落灰了.拿来试试.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picgo.genji.xyz/blog/posts/gitea.png">
+<meta property="article:published_time" content="2020-02-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-11T06:41:45.767Z">
+<meta property="article:author" content="Liu Lingyue">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="gitea">
+<meta property="article:tag" content="端口映射">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picgo.genji.xyz/blog/posts/gitea.png"><link rel="shortcut icon" href="https://picgo.genji.xyz/76logo/favicon.png"><link rel="canonical" href="https://blog.genji.xyz/2020/03/01/Diy/gitea/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-03-11 14:41:45'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://picgo.genji.xyz/76logo/circle_640.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">36</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">42</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">17</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> TimeLine</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/photo/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw far fa-comment-alt"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://picgo.genji.xyz/blog/posts/gitea.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">blog.genji.xyz</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> TimeLine</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/photo/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw far fa-comment-alt"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">在 树莓派/openwrt 中搭建gitea</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-02-29T16:00:00.000Z" title="发表于 2020-03-01 00:00:00">2020-03-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-03-11T06:41:45.767Z" title="更新于 2021-03-11 14:41:45">2021-03-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/diy/">diy</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="在 树莓派/openwrt 中搭建gitea"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="gitea"><a href="#gitea" class="headerlink" title=" gitea"></a><i class="fas fa-dog"></i> gitea</h1><div class="note primay flat"><p>gitea 就是 gogs 的小弟兄,一个自助的git服务</p>
+<p><a target="_blank" rel="noopener" href="https://docs.gitea.io/zh-cn/">中文文档</a>   <a target="_blank" rel="noopener" href="https://gitea.io/en-us/">英文文档</a></p>
+</div>
+
+<h2 id="docker-运行"><a href="#docker-运行" class="headerlink" title="docker 运行"></a>docker 运行</h2><p>有很多方式,<code>docker</code>最省事,其他的看 <a target="_blank" rel="noopener" href="https://docs.gitea.io/zh-cn/">中文文档</a> .</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 拉取镜像</span></span><br><span class="line">docker pull gitea/gitea:latest</span><br><span class="line"></span><br><span class="line"><span class="comment">## 在宿主机创建挂在到镜像的文件夹. 文件夹目录随意, 但是要和下一条命令对应  </span></span><br><span class="line">sudo mkdir -p /var/lib/gitea</span><br><span class="line"></span><br><span class="line"><span class="comment">## docker run </span></span><br><span class="line">docker <span class="keyword">run</span><span class="bash"> -d --name=gitea -p 10022:22 -p 10080:3000 -v /var/lib/gitea:/data gitea/gitea:latest</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## -d 后台运行</span></span><br><span class="line"><span class="comment">## --name= 给容器命名</span></span><br><span class="line"><span class="comment">## -p 外部端口:内部端口</span></span><br><span class="line"><span class="comment">## -v 外部要挂载的文件目录:容器内目录</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h2><p>在挂载文件目录时候,会报错.</p>
+<p>可能是没有权限的问题</p>
+<p>在<code>docker</code>&gt;<code>preferences</code>&gt;<code>resources</code>&gt;<code>file sharing</code>中添加你创建的文件目录</p>
+<h2 id="访问-gitea"><a href="#访问-gitea" class="headerlink" title="访问 gitea"></a>访问 gitea</h2><p> 我是软路由的docker,运行的所以要访问软路由的ip.</p>
+<p><code>192.168.3.123:10080</code></p>
+<h2 id="安装gitea"><a href="#安装gitea" class="headerlink" title="安装gitea"></a>安装gitea</h2><p><img src="https://picgo.genji.xyz/blog/posts/image-20201005025016837.png" alt="image-20201005025016837"></p>
+<p>先按照默认的来,熟练的话或者想用别的数据库,就直接改 </p>
+<p>设置好<code>管理员账号</code>后 ,立刻安装.</p>
+<p>重新打开网站 </p>
+<p><code>192.168.3.123:10080</code></p>
+<h2 id="配置-app-ini文件"><a href="#配置-app-ini文件" class="headerlink" title="配置 app.ini文件"></a>配置 app.ini文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你的路径/gitea/conf/app.ini</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/go-gitea/gitea/blob/master/custom/conf/app.example.ini">官方配置 example</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.gitea.io/zh-cn/config-cheat-sheet/#server">中文配置文档</a></p>
+<p>我的配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">## app.ini</span><br><span class="line"></span><br><span class="line">主要配置这些 其他的默认即可</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[server]</span><br><span class="line">APP_DATA_PATH    &#x3D; &#x2F;data&#x2F;gitea</span><br><span class="line">DOMAIN           &#x3D; git.genji.xyz</span><br><span class="line">SSH_DOMAIN       &#x3D; genji.xyz(这里要注意,不要写二级域名)</span><br><span class="line"></span><br><span class="line">#内部监听端口</span><br><span class="line">HTTP_PORT        &#x3D; 3000</span><br><span class="line"></span><br><span class="line"># 这里是你的访问网站的url(可以是你反向代理后的域名,可以使ip,看你具体的配置)</span><br><span class="line">ROOT_URL         &#x3D; https:&#x2F;&#x2F;git.genji.xyz</span><br><span class="line"></span><br><span class="line">## 是否允许ssh </span><br><span class="line">DISABLE_SSH      &#x3D; true</span><br><span class="line"></span><br><span class="line"># 这里千万别填 22 否则和你&#96;软路由&#96; 或者&#96;树莓派&#96;的ssh 冲突</span><br><span class="line">SSH_PORT         &#x3D; 2222</span><br><span class="line">SSH_LISTEN_PORT  &#x3D; 2222</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 这里是设置主题的 后面会说</span><br><span class="line"># gitea,arc-green 是自带的</span><br><span class="line">[ui]           </span><br><span class="line">DEFAULT_THEME &#x3D; genji                                                                               </span><br><span class="line">THEMES &#x3D;  gitea,arc-green,space,genji                                                               </span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里几个 ssh  和 url  要仔细点,</p>
+<h2 id="提交公钥"><a href="#提交公钥" class="headerlink" title="提交公钥"></a>提交公钥</h2><p><code>用户设置</code>&gt;ssh/gpg key 添加  </p>
+<h2 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h2><p><a target="_blank" rel="noopener" href="https://gitea.com/gitea/awesome-gitea">click here网站里的最下面有主题</a></p>
+<p>将主题 <code>theme-name.css</code> css(有的也有js) 文件放入  <code>\path\to\custom\public\css </code>.</p>
+<p>然后修改<code>\path\to\custom\conf\app.ini</code></p>
+<p>在<code> DEFAULT_THEME =  name</code>.</p>
+<p>重新docker run ,登录你的个人设置中 更改.</p>
+<p>你也可以看看文档 ,改改tmpl,css</p>
+<h2 id="端口映射"><a href="#端口映射" class="headerlink" title="端口映射"></a>端口映射</h2><p>我的是192.168.123:10080</p>
+<p>我得把这个端口映射到公网ip上,路由器的功能.别用光猫的端口映射(有点小bug )</p>
+<p>然后你可以ddns ,就能一直域名访问了 .</p>
+<p>你也可以直接放到 服务器 docker 里 , 反向代理到80.</p>
+<p> 写得很粗!有问题请留言.</p>
+<p><img src="https://picgo.genji.xyz/blog/posts/image-20201005032748440.png" alt="image-20201005032748440"></p>
+<p><img src="https://picgo.genji.xyz/blog/posts/image-20201005032836078.png" alt="image-20201005032836078"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Liu Lingyue</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.genji.xyz/2020/03/01/Diy/gitea/">https://blog.genji.xyz/2020/03/01/Diy/gitea/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.genji.xyz" target="_blank">blog.genji.xyz</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/docker/">docker</a><a class="post-meta__tags" href="/tags/gitea/">gitea</a><a class="post-meta__tags" href="/tags/%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/">端口映射</a></div><div class="post_share"><div class="social-share" data-image="https://picgo.genji.xyz/blog/posts/gitea.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://picgo.genji.xyz/blog/base/pay.png" target="_blank"><img class="post-qr-code-img" src="https://picgo.genji.xyz/blog/base/pay.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/03/04/Diy/%E9%BB%91%E8%8B%B9%E6%9E%9C/"><img class="prev-cover" src="https://picgo.genji.xyz/blog/bg/hardcoding4.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">intel nuc8i5 黑苹果</div></div></a></div><div class="next-post pull-right"><a href="/2020/03/01/Mark/md/Markdown%20%E8%AF%AD%E6%B3%95/"><img class="next-cover" src="https://picgo.genji.xyz/blog/posts/c4a6db3cba16fc150e3db76ca3c326d2.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Markdown语法和Typora快捷键</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/01/20/Mark/Docker/docker命令/" title="Docker 命令"><img class="cover" src="https://picgo.genji.xyz/blog/posts/dockerjpg.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-01-20</div><div class="title">Docker 命令</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://picgo.genji.xyz/76logo/circle_640.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Liu Lingyue</div><div class="author-info__description">nothing to say</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">36</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">42</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">17</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/genjiXYZ"><i class="fab fa-github"></i><span>see some thing</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/genjiXYZ" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:895939059@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎光临!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#gitea"><span class="toc-number">1.</span> <span class="toc-text"> gitea</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-%E8%BF%90%E8%A1%8C"><span class="toc-number">1.1.</span> <span class="toc-text">docker 运行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">可能出现的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE-gitea"><span class="toc-number">1.3.</span> <span class="toc-text">访问 gitea</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85gitea"><span class="toc-number">1.4.</span> <span class="toc-text">安装gitea</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-app-ini%E6%96%87%E4%BB%B6"><span class="toc-number">1.5.</span> <span class="toc-text">配置 app.ini文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E5%85%AC%E9%92%A5"><span class="toc-number">1.6.</span> <span class="toc-text">提交公钥</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BE%8E%E5%8C%96"><span class="toc-number">1.7.</span> <span class="toc-text">美化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84"><span class="toc-number">1.8.</span> <span class="toc-text">端口映射</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://picgo.genji.xyz/blog/posts/gitea.png')"><div id="footer-wrap"><div class="copyright">&copy;2021 By Liu Lingyue</div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><span>粤ICP备19065708号</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'f9cRBhF3nyWCTepXQ9Gliu9d-gzGzoHsz',
+      appKey: 'leLE4kfVjaPcdCQ3SNjwQXUr',
+      placeholder: '留下你的建议',
+      avatar: 'monsterid',
+      meta: 'nick,mail'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  //- // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

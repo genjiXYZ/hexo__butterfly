@@ -1,0 +1,360 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>console. | blog.genji.xyz</title><meta name="keywords" content="console"><meta name="author" content="Liu Lingyue"><meta name="copyright" content="Liu Lingyue"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一些常用的console">
+<meta property="og:type" content="article">
+<meta property="og:title" content="console.">
+<meta property="og:url" content="https://blog.genji.xyz/2020/09/02/%E5%89%8D%E7%AB%AF/js/console/index.html">
+<meta property="og:site_name" content="blog.genji.xyz">
+<meta property="og:description" content="一些常用的console">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picgo.genji.xyz/blog/posts/console_log.png">
+<meta property="article:published_time" content="2020-09-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-11T06:44:47.454Z">
+<meta property="article:author" content="Liu Lingyue">
+<meta property="article:tag" content="js">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picgo.genji.xyz/blog/posts/console_log.png"><link rel="shortcut icon" href="https://picgo.genji.xyz/76logo/favicon.png"><link rel="canonical" href="https://blog.genji.xyz/2020/09/02/%E5%89%8D%E7%AB%AF/js/console/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-03-11 14:44:47'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://picgo.genji.xyz/76logo/circle_640.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">36</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">42</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">17</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> TimeLine</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/photo/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw far fa-comment-alt"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://picgo.genji.xyz/blog/posts/console_log.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">blog.genji.xyz</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> TimeLine</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/photo/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw far fa-comment-alt"></i><span> 留言</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">console.</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-01T16:00:00.000Z" title="发表于 2020-09-02 00:00:00">2020-09-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-03-11T06:44:47.454Z" title="更新于 2021-03-11 14:44:47">2021-03-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/js/">js</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="console."><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><ul>
+<li>console.log</li>
+<li>console.dir</li>
+<li>console.table()</li>
+<li>console.trace</li>
+<li>console.error() console.warn()</li>
+<li>console.time()和 console.timeEnd()</li>
+<li>console.group() console.groupEnd()</li>
+<li>console.count()</li>
+<li>console.clear()</li>
+<li>自定义样式</li>
+</ul>
+<h2 id="console-log"><a href="#console-log" class="headerlink" title="console.log()"></a>console.log()</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//没啥说的</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;genji&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;name : &quot;</span>, name);</span><br><span class="line"></span><br><span class="line"><span class="comment">// name :  genji</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//tips</span></span><br><span class="line"><span class="built_in">console</span>.log([object]);</span><br></pre></td></tr></table></figure>
+
+<h2 id="console-dir"><a href="#console-dir" class="headerlink" title="console.dir()"></a>console.dir()</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//tips</span></span><br><span class="line"><span class="built_in">console</span>.dir(object, &#123;<span class="attr">depth</span>:<span class="literal">null</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="console-table"><a href="#console-table" class="headerlink" title="console.table()"></a>console.table()</h2><p>一开始没觉得很好用,直到有一天</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> animal = &#123;</span><br><span class="line">  dog: &#123; <span class="attr">name</span>: <span class="string">&quot;haha&quot;</span>, <span class="attr">like</span>: <span class="string">&quot;shit&quot;</span>, <span class="attr">about</span>: <span class="string">&quot;123&quot;</span> &#125;,</span><br><span class="line">  cat: &#123; <span class="attr">name</span>: <span class="string">&quot;lili&quot;</span>, <span class="attr">like</span>: <span class="string">&quot;wool&quot;</span>, <span class="attr">about</span>: <span class="string">&quot;4523523&quot;</span> &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.table(animal, [<span class="string">&quot;name&quot;</span>]);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo.genji.xyz/blog/posts/image-20201128144734279.png" alt="image-20201128144734279"></p>
+<p>可是筛选,可以排序.</p>
+<p>有些请求的数据,有很多东西是你不用的,这样一筛选,很清晰了</p>
+<p>换成数组试试.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> animal = [</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">&quot;lili&quot;</span>, <span class="attr">email</span>: <span class="string">&quot;haha@qq.com&quot;</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">&quot;lala&quot;</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">&quot;wang&quot;</span>, <span class="attr">email</span>: <span class="string">&quot;123@qq.com&quot;</span> &#125;,</span><br><span class="line">];</span><br><span class="line"><span class="built_in">console</span>.table(animal, <span class="string">&quot;email&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo.genji.xyz/blog/posts/image-20201128145644045.png" alt="image-20201128145644045"></p>
+<p>可以清晰看到, 数组哪个对象的<code>key</code>是不存在的.并且能清晰的看到 index</p>
+<p>要不你还得</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">animal.forEach(<span class="function">(<span class="params">e, i</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;i&#125;</span>----<span class="subst">$&#123;e.email&#125;</span>`</span>));</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://picgo.genji.xyz/blog/posts/image-20201128145939043.png" alt="image-20201128145939043"></p>
+<p>各有利弊,适当选择.我觉得有时候挺香的,有时候没那么香.</p>
+<h2 id="console-error-console-warn"><a href="#console-error-console-warn" class="headerlink" title="console.error() console.warn()"></a>console.error() console.warn()</h2><p>我就是当高亮 来用!</p>
+<p><img src="/Users/liulingyue/Desktop/hexo__butterfly/source/_posts/%E5%89%8D%E7%AB%AF/js/image-20201128151533877.png" alt="image-20201128151533877"></p>
+<h2 id="console-trace"><a href="#console-trace" class="headerlink" title="console.trace()"></a>console.trace()</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;fn1()&quot;</span>&gt;</span>跟踪函数运行<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line">    fn2();</span><br><span class="line">  &#125;</span><br><span class="line"><span class="javascript">  <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.trace();</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">/// console.trace fn2 fn1 onclick</span><br></pre></td></tr></table></figure>
+
+<h2 id="console-group-console-groupEnd"><a href="#console-group-console-groupEnd" class="headerlink" title="console.group() console.groupEnd()"></a>console.group() console.groupEnd()</h2><p>就是分下组. 更有层次吧</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;Runoob&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.group(<span class="string">&quot;post请求&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;res = &#123;data:&#x27;hello&#x27;&#125;&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.groupEnd();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;执行下一个个命令&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Users/liulingyue/Desktop/hexo__butterfly/source/_posts/%E5%89%8D%E7%AB%AF/js/image-20201128140913499.png" alt="image-20201128140913499"></p>
+<h2 id="console-time-和-console-timeEnd"><a href="#console-time-和-console-timeEnd" class="headerlink" title="console.time()和 console.timeEnd()"></a>console.time()和 console.timeEnd()</h2><p>我主要是计时比较下性能,</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.time();</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;&#125;</span><br><span class="line"><span class="built_in">console</span>.timeEnd();</span><br></pre></td></tr></table></figure>
+
+<h2 id="console-count-console-clear"><a href="#console-count-console-clear" class="headerlink" title="console.count() console.clear()"></a>console.count() console.clear()</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.count(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// name: 1</span></span><br><span class="line"><span class="comment">// name: 2</span></span><br><span class="line"><span class="comment">// name: 3</span></span><br><span class="line"><span class="comment">// name: 4</span></span><br><span class="line"><span class="comment">// name: 5</span></span><br><span class="line"><span class="comment">// name: 6</span></span><br><span class="line"><span class="comment">// name: 7</span></span><br><span class="line"><span class="comment">// name: 8</span></span><br><span class="line"><span class="comment">// name: 9</span></span><br><span class="line">就是个计数的 从<span class="number">1</span> 开始</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.clear()  <span class="comment">// 清空</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="console-profile-console-profileEnd"><a href="#console-profile-console-profileEnd" class="headerlink" title="console.profile console.profileEnd"></a>console.profile console.profileEnd</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.profile(<span class="string">&#x27;性能分析器&#x27;</span>);</span><br><span class="line">fn();</span><br><span class="line"><span class="built_in">console</span>.profileEnd();</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/Users/liulingyue/Desktop/hexo__butterfly/source/_posts/%E5%89%8D%E7%AB%AF/js/image-20201128140338413.png" alt="image-20201128140338413"></p>
+<h2 id="自定义内容"><a href="#自定义内容" class="headerlink" title="自定义内容"></a>自定义内容</h2><table>
+<thead>
+<tr>
+<th>占位符</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%s</td>
+<td>字符串</td>
+</tr>
+<tr>
+<td>%d or %i</td>
+<td>整数</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>浮点数</td>
+</tr>
+<tr>
+<td>%o</td>
+<td>可展开的DOM</td>
+</tr>
+<tr>
+<td>%O</td>
+<td>列出DOM的属性</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>根据提供的css样式格式化字符串</td>
+</tr>
+</tbody></table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 格式成可展开的的DOM，像在开发者工具Element面板那样可展开 </span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;%o&#x27;</span>,<span class="built_in">document</span>.body.firstElementChild); </span><br><span class="line"><span class="comment">// 像JS对象那样访问DOM元素，可查看DOM元素的属性 </span></span><br><span class="line"><span class="comment">// 等同于console.dir(document.body.firstElementChild) </span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;%O&#x27;</span>,<span class="built_in">document</span>.body.firstElementChild);</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p><img src="/Users/liulingyue/Desktop/hexo__butterfly/source/_posts/%E5%89%8D%E7%AB%AF/js/image-20201128160732266.png" alt="image-20201128160732266"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(</span><br><span class="line">  <span class="string">&quot; ________   ____    \n/\\_____  \\ /&#x27;___\\   \n\\/___//&#x27;/&#x27;/\\ \\__/   \n    /&#x27; /&#x27; \\ \\  _``\\ \n  /&#x27; /&#x27;    \\ \\ \\L\\ \\\n /\\_/       \\ \\____/\n \\//         \\/___/ \n&quot;</span></span><br><span class="line">),</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;%c 送我杯咖啡 &quot;</span>, <span class="string">&quot;color:orange;font-size:16px&quot;</span>),</span><br><span class="line">  <span class="built_in">console</span>.log(</span><br><span class="line">    <span class="string">&quot;%c &quot;</span>,</span><br><span class="line">    <span class="string">&quot;background: url(http://picgo.genji.xyz/zanshangma.jpeg) no-repeat center;padding:100px;border-radius:20px;background-size: cover;&quot;</span></span><br><span class="line">  ),</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;%c 前端小菜鸟,欢迎您来找 &quot;</span>, <span class="string">&quot;color:orange;font-size:24px&quot;</span>),</span><br><span class="line">  <span class="built_in">console</span>.log(</span><br><span class="line">    <span class="string">&quot;%c &quot;</span>,</span><br><span class="line">    <span class="string">&quot;background: url(http://pic.genji.xyz/images/2020/03/15/WechatIMG3.jpg) no-repeat center;padding:100px;background-size: cover;&quot;</span></span><br><span class="line">  );</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>76 是怎么弄得 </p>
+<p>字</p>
+<p><a target="_blank" rel="noopener" href="http://www.network-science.de/ascii/">http://www.network-science.de/ascii/</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.figlet.org/examples.html">http://www.figlet.org/examples.html</a></p>
+<p>图</p>
+<p><a target="_blank" rel="noopener" href="https://www.degraeve.com/img2txt.php">https://www.degraeve.com/img2txt.php</a></p>
+<p>或者google pic2ascii</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Liu Lingyue</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.genji.xyz/2020/09/02/%E5%89%8D%E7%AB%AF/js/console/">https://blog.genji.xyz/2020/09/02/%E5%89%8D%E7%AB%AF/js/console/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.genji.xyz" target="_blank">blog.genji.xyz</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/js/">js</a></div><div class="post_share"><div class="social-share" data-image="https://picgo.genji.xyz/blog/posts/console_log.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://picgo.genji.xyz/blog/base/pay.png" target="_blank"><img class="post-qr-code-img" src="https://picgo.genji.xyz/blog/base/pay.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/09/02/%E5%89%8D%E7%AB%AF/js/2020-10-22_Web_JS_%E5%A5%87%E6%B7%AB%E7%9A%84%E9%A2%98/"><img class="prev-cover" src="https://picgo.genji.xyz/blog/posts/picjs.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">奇淫的火箭</div></div></a></div><div class="next-post pull-right"><a href="/2020/09/02/Diy/awtrix/"><img class="next-cover" src="https://picgo.genji.xyz/blog/posts/image-20200930140531153.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">awtrix</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/09/02/前端/js/2020-10-22_Web_JS_Arr_Remove Duplicates /" title="数组去重||unique||remove duplicates"><img class="cover" src="https://picgo.genji.xyz/blog/posts/picjs.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-02</div><div class="title">数组去重||unique||remove duplicates</div></div></a></div><div><a href="/2020/09/02/前端/js/2020-10-22_Web_JS_Arr_find_indexOf_findIndex_some_includes/" title="find findIndex indexOf includes"><img class="cover" src="https://picgo.genji.xyz/blog/posts/picjs.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-02</div><div class="title">find findIndex indexOf includes</div></div></a></div><div><a href="/2020/09/02/前端/js/2020-10-22_Web_JS_Arr_loop/" title="filter forEach every some reduce"><img class="cover" src="https://picgo.genji.xyz/blog/posts/picjs.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-02</div><div class="title">filter forEach every some reduce</div></div></a></div><div><a href="/2020/09/02/前端/js/2020-10-22_Web_JS_Arr_sort/" title="Js Array.sort()"><img class="cover" src="https://picgo.genji.xyz/blog/posts/picjs.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-02</div><div class="title">Js Array.sort()</div></div></a></div><div><a href="/2020/09/02/前端/js/js好的写法/" title="js 一些写法记录"><img class="cover" src="https://picgo.genji.xyz/blog/posts/image-20201010162139035.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-02</div><div class="title">js 一些写法记录</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://picgo.genji.xyz/76logo/circle_640.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Liu Lingyue</div><div class="author-info__description">nothing to say</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">36</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">42</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">17</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/genjiXYZ"><i class="fab fa-github"></i><span>see some thing</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/genjiXYZ" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:895939059@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎光临!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#console-log"><span class="toc-number">1.</span> <span class="toc-text">console.log()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#console-dir"><span class="toc-number">2.</span> <span class="toc-text">console.dir()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#console-table"><span class="toc-number">3.</span> <span class="toc-text">console.table()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#console-error-console-warn"><span class="toc-number">4.</span> <span class="toc-text">console.error() console.warn()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#console-trace"><span class="toc-number">5.</span> <span class="toc-text">console.trace()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#console-group-console-groupEnd"><span class="toc-number">6.</span> <span class="toc-text">console.group() console.groupEnd()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#console-time-%E5%92%8C-console-timeEnd"><span class="toc-number">7.</span> <span class="toc-text">console.time()和 console.timeEnd()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#console-count-console-clear"><span class="toc-number">8.</span> <span class="toc-text">console.count() console.clear()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#console-profile-console-profileEnd"><span class="toc-number">9.</span> <span class="toc-text">console.profile console.profileEnd</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%86%85%E5%AE%B9"><span class="toc-number">10.</span> <span class="toc-text">自定义内容</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://picgo.genji.xyz/blog/posts/console_log.png')"><div id="footer-wrap"><div class="copyright">&copy;2021 By Liu Lingyue</div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><span>粤ICP备19065708号</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'f9cRBhF3nyWCTepXQ9Gliu9d-gzGzoHsz',
+      appKey: 'leLE4kfVjaPcdCQ3SNjwQXUr',
+      placeholder: '留下你的建议',
+      avatar: 'monsterid',
+      meta: 'nick,mail'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  //- // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
