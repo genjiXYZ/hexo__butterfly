@@ -18,4 +18,11 @@ jobs:
       uses: actions/setup-node@v2-beta
       with:
         node-version: 12.x
+        
+    
+    - name: install yarn
     - run: yarn --version
+           yarn install
+           yarn bulid
+           ls
+           
